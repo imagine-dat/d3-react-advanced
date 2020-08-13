@@ -2,7 +2,7 @@ import React from 'react';
 import * as d3 from 'd3';
 import { useResize } from './Resize';
 
-export default ({ bubbleData, setSelected, selected, setPokeList }) => {
+export default ({ bubbleData, setSelected, selected }) => {
     const { size, ref } = useResize();
     const [width, height] = size;
     const pack = (data) =>

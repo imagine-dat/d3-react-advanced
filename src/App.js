@@ -37,10 +37,6 @@ const App = () => {
     };
     getInitialData();
 
-    const getPokemons = async () => {
-        if (selectedType?.type) setPokeList(selectedType.pokemon);
-    };
-
     const getSelectPokemon = async () => {
         setMonLoading(true);
         try {
@@ -54,6 +50,9 @@ const App = () => {
         setMonLoading(false);
     }, [selectedPokemonData]);
 
+    const getPokemons = async () => {
+        if (selectedType?.type) setPokeList(selectedType.pokemon);
+    };
     useEffect(() => {
         if (selectedType) {
             getPokemons();
@@ -73,12 +72,7 @@ const App = () => {
                     selected={selectedType}
                     setSelectedMon={setSelectedMon}
                 />
-                <BubbleChart
-                    bubbleData={pokeTypes}
-                    setSelected={setSelected}
-                    selected={selectedType}
-                    setPokeList={setPokeList}
-                />
+                <BubbleChart bubbleData={pokeTypes} setSelected={setSelected} selected={selectedType} />
                 {selectedPokemonData && <PokemonDetails pokemon={selectedPokemonData} monLoading={monLoading} />}
             </main>
         </div>

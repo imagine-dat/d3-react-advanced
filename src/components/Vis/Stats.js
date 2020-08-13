@@ -40,7 +40,7 @@ export default ({ data }) => {
             <svg
                 className="PokeStats"
                 width={width}
-                height={height + 30}
+                height={height + 50}
                 viewBox={`0 0 ${width} ${height}`}
                 overflow="auto"
             >
